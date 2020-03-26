@@ -1,20 +1,19 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './styles.css';
 import parksDataArr from "./ParksData";
+import Header from "./Components/Header";
 import ParksList from "./Components/ParksList";
-import Park from "./Components/Park";
-import ParkDetails from "./Components/ParkDetails";
-import Home from "./Components/Home";
+import Footer from "./Components/Footer";
 
 function App() {
-    const [parks, setParks] = useState(parksDataArr);
 
     return (
         <div className="App">
-            <Home/>
-            <ParksList/>
-            <Park/>
-            <ParkDetails parks={parks}/>
+            <Header/>
+            <div className="main-container">
+                <ParksList parks={parksDataArr} />
+            </div>
+            <Footer/>
         </div>
     );
 }
